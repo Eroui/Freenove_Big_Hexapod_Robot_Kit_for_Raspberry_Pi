@@ -4,12 +4,13 @@ import math
 from ui_led import Ui_led
 from ui_face import Ui_Face
 from ui_client import Ui_client
-from PyQt5 import QtCore, QtGui, QtWidgets
-from PyQt5.QtCore import *
-from PyQt5.QtWidgets import *
-from PyQt5.QtGui import *
+from PySide6 import QtCore, QtGui, QtWidgets
+from PySide6.QtCore import *
+from PySide6.QtWidgets import *
+from PySide6.QtGui import *
 from Client import *
 from Calibration import *
+
 class MyWindow(QMainWindow,Ui_client):
     def __init__(self):
         super(MyWindow,self).__init__()
@@ -967,9 +968,9 @@ class calibrationWindow(QMainWindow,Ui_calibration):
         self.point[5][2] = self.six_z.text()
 
         self.Save_to_txt(self.point,'point')
-        reply = QMessageBox.information(self,                        
-                                        "Message",  
-                                        "Saved successfully",  
+        reply = QMessageBox.information(self,
+                                        "Message",
+                                        "Saved successfully",
                                         QMessageBox.Yes)
         #print(command)
     def Read_from_txt(self,filename):
@@ -993,7 +994,7 @@ class calibrationWindow(QMainWindow,Ui_calibration):
                 file2.write('\t')
             file2.write('\n')
         file2.close()
-        
+
     def leg_point(self,leg):
         if leg.text() == "One":
             if leg.isChecked() == True:
