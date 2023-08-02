@@ -230,8 +230,8 @@ class MyWindow(QMainWindow,Ui_client):
             print(e)
 
     def mouseMoveEvent(self, event):
-        x = event.pos().x()
-        y = event.pos().y()
+        x = event.position().x()
+        y = event.position().y()
         if x >= 700 and x <= 900:
             if y >= 80 and y <= 280:
                 try:
@@ -294,8 +294,8 @@ class MyWindow(QMainWindow,Ui_client):
             self.update()
 
     def mousePressEvent(self, event):
-        x = event.pos().x()
-        y = event.pos().y()
+        x = event.position().x()
+        y = event.position().y()
         if x >= 700 and x <= 900:
             if y >= 80 and y <= 280:
                 try:
@@ -356,8 +356,8 @@ class MyWindow(QMainWindow,Ui_client):
             self.update()
 
     def mouseReleaseEvent(self, event):
-        x = event.pos().x()
-        y = event.pos().y()
+        x = event.position().x()
+        y = event.position().y()
         #print(x,y)
         if self.move_flag:
             self.move_point = [325, 635]
